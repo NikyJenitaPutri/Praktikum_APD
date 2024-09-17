@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ACER A314-22"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-17 09:30:30 AM"/>
+        <attribute name="created" value="QUNFUiBBMzE0LTIyOyBMQVBUT1AtTUxTNDg2QjQ7IDIwMjQtMDktMTU7IDEyOjU5OjU0IFBNOyAzMDkx"/>
+        <attribute name="edited" value="QUNFUiBBMzE0LTIyOyBMQVBUT1AtTUxTNDg2QjQ7IDIwMjQtMDktMTc7IDA5OjMwOjMwIEFNOyAzMDY3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="namalengkap, namapanggilan, prodi, universitas, tempatlahir, tanggallahir" type="String" array="False" size=""/>
+            <declare name="umur, TigaAngkaTerakhirNim, hasilmodulus" type="Integer" array="False" size=""/>
+            <declare name="nim, tinggibadan" type="Real" array="False" size=""/>
+            <output expression="&quot;masukan nama lengkap&quot;"/>
+            <input variable="namalengkap"/>
+            <output expression="&quot;masukan nama panggilan&quot;"/>
+            <input variable="namapanggilan"/>
+            <output expression="&quot;masukan nama prodi&quot;"/>
+            <input variable="prodi"/>
+            <output expression="&quot;masukan umur&quot;"/>
+            <input variable="umur"/>
+            <output expression="&quot;masukan NIM&quot;"/>
+            <input variable="NIM"/>
+            <output expression="&quot;masukan universitas&quot;"/>
+            <input variable="universitas"/>
+            <output expression="&quot;masukan tempat lahir&quot;"/>
+            <input variable="tempatlahir"/>
+            <output expression="&quot;masukan tanggal lahir (dengan format : DD-MM-YYYY)&quot;"/>
+            <input variable="tanggallahir"/>
+            <output expression="&quot;masukan tinggi badan (dalam meter)&quot;"/>
+            <input variable="tinggibadan"/>
+            <assign variable="TigaAngkaTerakhirNIM" expression="nim % 1000"/>
+            <assign variable="hasilmodulus" expression="TigaAngkaTerakhirNIM % 6"/>
+            <output expression="&quot;Biodata saya adalah sebagai berikut ini : &quot; &amp;&#13;&#10;&quot;Nama lengkap saya adalah &quot; &amp;namalengkap &amp; &quot;, biasa dipanggil &quot; &amp;namapanggilan &amp;  &quot;. Saya adalah salah satu mahasiswa program studi &quot; &amp;prodi &amp; &quot; dengan Nim &quot; &amp;NIM &amp; &quot; di &quot; &amp;universitas &amp; &quot;. Sekarang saya berumur &quot; &amp;umur &amp; &quot;. Saya lahir di &quot; &amp;tempatlahir &amp; &quot; pada tanggal &quot; &amp;tanggallahir &amp;&#13;&#10;&quot;. Saya memiliki tinggi badan &quot; &amp;tinggibadan &amp; &quot; meter.&quot; &amp;&#13;&#10;&quot;. Tiga angka terakhir NIM saya adalah &quot; &amp;tigaangkaterakhirnim &amp;&#13;&#10;&quot; dan jika dimoduluskan dengan 6 hasilnya adalah &quot; &amp;hasilmodulus"/>
+        </body>
+    </function>
+</flowgorithm>
