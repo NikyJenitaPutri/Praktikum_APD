@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ACER A314-22"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-01 11:35:08 AM"/>
+        <attribute name="created" value="QUNFUiBBMzE0LTIyOyBMQVBUT1AtTUxTNDg2QjQ7IDIwMjQtMDktMjI7IDEyOjUxOjQ2IFBNOyAzMDgy"/>
+        <attribute name="edited" value="QUNFUiBBMzE0LTIyOyBMQVBUT1AtTUxTNDg2QjQ7IDIwMjQtMTAtMDE7IDExOjM1OjA4IEFNOyAzMDU1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="namapanggilan, username, ulang" type="String" array="False" size=""/>
+            <declare name="nim, i, password, jeniskelamin, levelaktivitasharian" type="Integer" array="False" size=""/>
+            <declare name="beratbadan, tinggibadan, umur, bmr, tdee" type="Real" array="False" size=""/>
+            <output expression="&quot;===BUAT AKUN===&quot;"/>
+            <output expression="&quot;Masukan nama panggilan : &quot;"/>
+            <input variable="namapanggilan"/>
+            <output expression="&quot;Masukan 3 digit angka terakhir NIM (jika diawali 0 maka 0 tidak perlu dicantumkan) : &quot;"/>
+            <input variable="NIM"/>
+            <output expression="&quot;Akun berhasil dibuat!!&quot;"/>
+            <output expression="&quot;Username : &quot; &amp;namapanggilan"/>
+            <output expression="&quot;Password : &quot; &amp;NIM"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i &lt; 3">
+                <output expression="&quot;===LOGIN===&quot;"/>
+                <output expression="&quot;Username : &quot;"/>
+                <input variable="username"/>
+                <output expression="&quot;Password : &quot;"/>
+                <input variable="password"/>
+                <if expression="username==namapanggilan and password==NIM">
+                    <then>
+                        <output expression="&quot;Login berhasil!!!&quot;"/>
+                        <while expression="True">
+                            <output expression="&quot;===KALKULATOR KALORI===&quot;"/>
+                            <output expression="&quot;Masukan berat badan (dalam gr) : &quot;"/>
+                            <input variable="beratbadan"/>
+                            <output expression="&quot;Masukan tinggi badan (dalam km) : &quot;"/>
+                            <input variable="tinggibadan"/>
+                            <output expression="&quot;masukan umur (dalam tahun)&quot;"/>
+                            <input variable="umur"/>
+                            <output expression="&quot;Pilih jenis kelamin : &quot;&amp;&#13;&#10;&quot; 1. pria &quot;&amp;&#13;&#10;&quot; 2. wanita &quot;&amp;&#13;&#10;&quot;(plihan 1 atau 2) : &quot;"/>
+                            <input variable="jeniskelamin"/>
+                            <if expression="jeniskelamin = 1">
+                                <then>
+                                    <assign variable="bmr" expression="(10*(beratbadan/1000))+(6.25*(tinggibadan*100000))-(5*umur)+5"/>
+                                    <output expression="&quot;Pilih level aktivitas harian: &quot; &amp;&#13;&#10;&quot; 1. Aktivitas minimal (jarang bergerak)&quot; &amp;&#13;&#10;&quot; 2. Aktivitas sedang (olahraga 1-3 kali seminggu)&quot; &amp;&#13;&#10;&quot; 3. Aktivitas tinggi (olahraga 4-7 kali seminggu)&quot;&amp;&#13;&#10;&quot; (pilihan 1/2/3)&quot;"/>
+                                    <input variable="levelaktivitasharian"/>
+                                    <if expression="levelaktivitasharian=1">
+                                        <then>
+                                            <assign variable="tdee" expression="bmr*1.25"/>
+                                            <output expression="&quot;Jadi, Kebutuhan Kalori Harian adalah &quot; &amp;tdee"/>
+                                        </then>
+                                        <else>
+                                            <if expression="levelaktivitasharian=2">
+                                                <then>
+                                                    <assign variable="tdee" expression="bmr*1.36"/>
+                                                    <output expression="&quot;Jadi, Kebutuhan Kalori Harian adalah &quot; &amp;tdee"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="levelaktivitasharian=3">
+                                                        <then>
+                                                            <assign variable="tdee" expression="bmr*1.72"/>
+                                                            <output expression="&quot;Jadi, Kebutuhan Kalori Harian adalah &quot; &amp;tdee"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;pilihan tidak valid&quot;"/>
+                                                            <breakpoint/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="jeniskelamin=2">
+                                        <then>
+                                            <assign variable="bmr" expression="(10*(beratbadan/1000))+(6.25*(tinggibadan*100000))-(5*umur)-161"/>
+                                            <output expression="&quot;Pilih level aktivitas harian: &quot; &amp;&#13;&#10;&quot; 1. Aktivitas minimal (jarang bergerak)&quot; &amp;&#13;&#10;&quot; 2. Aktivitas sedang (olahraga 1-3 kali seminggu)&quot; &amp;&#13;&#10;&quot; 3. Aktivitas tinggi (olahraga 4-7 kali seminggu)&quot;&amp;&#13;&#10;&quot; (pilihan 1/2/3)&quot;"/>
+                                            <input variable="levelaktivitasharian"/>
+                                            <if expression="levelaktivitasharian=1">
+                                                <then>
+                                                    <assign variable="tdee" expression="bmr*1.25"/>
+                                                    <output expression="&quot;Jadi, Kebutuhan Kalori Harian adalah &quot; &amp;tdee"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="levelaktivitasharian=2">
+                                                        <then>
+                                                            <assign variable="tdee" expression="bmr*1.36"/>
+                                                            <output expression="&quot;Jadi, Kebutuhan Kalori Harian adalah &quot; &amp;tdee"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="levelaktivitasharian=3">
+                                                                <then>
+                                                                    <assign variable="tdee" expression="bmr*1.72"/>
+                                                                    <output expression="&quot;Jadi, Kebutuhan Kalori Harian adalah &quot; &amp;tdee"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;pilihan tidak valid&quot;"/>
+                                                                    <breakpoint/>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;pilihan tidak valid&quot;"/>
+                                            <breakpoint/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                            <output expression="&quot;Apakah Anda ingin menghitung lagi? (iya/tidak) :&quot;"/>
+                            <input variable="ulang"/>
+                            <if expression="ulang == &quot;iya&quot;">
+                                <then/>
+                                <else>
+                                    <output expression="&quot;Terima kasih sudah menggunakan Kalkulator kalori harian!!&quot;"/>
+                                    <breakpoint/>
+                                </else>
+                            </if>
+                        </while>
+                        <breakpoint/>
+                    </then>
+                    <else>
+                        <assign variable="i" expression="i + 1"/>
+                        <output expression="&quot;Login gagal, silahkan coba lagi&quot;"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Login gagal 3 kali. Program berhenti&quot;"/>
+        </body>
+    </function>
+</flowgorithm>
